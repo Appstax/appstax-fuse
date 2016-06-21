@@ -3788,6 +3788,7 @@ function createModel(objects, users, channels, socket, hub) {
     var api = {
         watch: addObserver,
         on: addHandler,
+        save: saveObject,
         observable: function(o) { return createObservable(api, o, objects) }
     }
     var model = {
@@ -3836,6 +3837,11 @@ function createModel(objects, users, channels, socket, hub) {
             observer.sort && observer.sort();
         });
         notifyHandlers("change");
+    }
+
+    function saveObject(object) {
+        notifyHandlers("change");
+        return object.save();
     }
 }
 
@@ -4085,9 +4091,7 @@ function createObservable(model, Observable, objects) {
         return o1.id == o2.id;
     }
 
-    function updateObject(oldObject, newObject) {
-        objects.copy(newObject, oldObject);
-    }
+    function updateObject(oldObject, newObject) {}
 
     function mapObject(newObject) {
         return newObject;
