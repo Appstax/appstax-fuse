@@ -1,0 +1,13 @@
+<App>
+    <JavaScript File="appstax.js" ux:Global="appstax" />
+    <JavaScript>
+        
+        var appstax = require("appstax");
+        appstax.init("<<appstax-app-key>>");
+
+        // Replace app key above with your own, and start coding!
+        // To get started, read https://appstax.com/docs/fuse-guide.html
+
+    </JavaScript>
+</App>
+
