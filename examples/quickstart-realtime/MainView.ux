@@ -1,0 +1,22 @@
+<App>
+    <JavaScript File="WebSocket/WebSocket.js" />
+    <JavaScript File="appstax.js" ux:Global="appstax" />
+    <JavaScript File="MainView.js" />
+    <ScrollView>
+        <StackPanel Padding="10,40">
+            <Panel Padding="20">
+                <Button Clicked="{sendMessage}">
+                    <Panel Color="#09F" Padding="20">
+                        <Text Value="Send a message" Color="White" TextAlignment="Center" />
+                    </Panel>
+                </Button>
+            </Panel>
+            <Each Items="{messages}">
+                <Panel Padding="20">
+                    <Text Value="{}" TextWrapping="Wrap"/>
+                </Panel>
+            </Each>
+        </StackPanel>
+    </ScrollView>
+</App>
+

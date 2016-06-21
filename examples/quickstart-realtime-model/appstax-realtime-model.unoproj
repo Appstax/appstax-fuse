@@ -1,0 +1,17 @@
+{
+  "RootNamespace":"",
+  "Packages": [
+    "Fuse",
+    "FuseJS"
+  ],
+  "iOS": {
+    "DeploymentTarget": "8.0"
+  },
+  "Includes": [
+    "*",
+    "WebSocket/*",
+    "WebSocket/ios/*.h:ObjCHeader:iOS",
+    "WebSocket/ios/*.m:ObjCSource:iOS",
+    "WebSocket/android/*.java:Java:Android"
+  ]
+}

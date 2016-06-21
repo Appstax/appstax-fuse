@@ -1,0 +1,21 @@
+<App>
+    <JavaScript File="appstax.js" ux:Global="appstax" />
+    <JavaScript File="MainView.js" />
+    <ScrollView>
+        <StackPanel Padding="10,40">
+            <Panel Padding="20">
+                <Button Clicked="{addMessage}">
+                    <Panel Color="#09F" Padding="20">
+                        <Text Value="Add message" Color="White" TextAlignment="Center" />
+                    </Panel>
+                </Button>
+            </Panel>
+            <Each Items="{messages}">
+                <Panel Padding="20">
+                    <Text Value="{text}" TextWrapping="Wrap"/>
+                </Panel>
+            </Each>
+        </StackPanel>
+    </ScrollView>
+</App>
+

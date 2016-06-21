@@ -1,0 +1,40 @@
+<App>
+    <JavaScript File="WebSocket/WebSocket.js" />
+    <JavaScript File="appstax.js" ux:Global="appstax" />
+    <JavaScript File="MainView.js" />
+    <DockPanel>
+        <StatusBarBackground Dock="Top"/>
+        <BottomBarBackground Dock="Bottom"/>
+        <StackPanel>
+            <TextInput PlaceholderText="Type a new todo here..." 
+                       Value="{newItem}"
+                       PlaceholderColor="#CCC" Padding="20"
+                       ActionStyle="Done" 
+                       ActionTriggered="{addItem}" />
+            <Each Items="{model.todos}">
+                <Grid RowCount="1" Columns="20,auto" Color="#FAFAFA" 
+                      Padding="20,10" Margin="1" Clicked="{toggle}">
+                    <Checkbox />
+                    <Panel Column="1" Padding="10">
+                        <Text Value="{title}"/>
+                    </Panel>
+                </Grid>
+            </Each>
+        </StackPanel>
+    </DockPanel>
+
+    <Button ux:Class="Checkbox">
+        <Match Value="{completed}">
+            <Case Bool="true">
+                <Rectangle Color="#3AF" Width="20" Height="20">
+                    <Stroke Color="#000"/>
+                </Rectangle>
+            </Case>
+            <Case Bool="false">
+                <Rectangle Color="#FFF" Width="20" Height="20">
+                    <Stroke Color="#000"/>
+                </Rectangle>
+            </Case>
+        </Match>
+    </Button>
+</App>
